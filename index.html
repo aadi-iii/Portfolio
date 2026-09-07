@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Sharma | Interactive Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Aditya Sharma - Computer Engineering Student, Web Developer, and IoT & Robotics Enthusiast.">
+  
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Stylesheet (Flat structure) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Interactive Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">Aditya.Sharma</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a>
+        <a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a>
+        <a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a>
+        <a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+        <a href="#certifications" class="nav-link"><i class="fa-solid fa-certificate"></i> Certs</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Get In Touch</a>
+
+        <button id="mobile-toggle" class="btn-icon mobile-menu-btn" aria-label="Open Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span>Open for Internships & Projects</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Aditya Sharma</span>
+          </h1>
+
+          <h2 class="hero-subtitle">
+            I am a <span id="typing-text" class="typing-highlight"></span><span class="cursor">|</span>
+          </h2>
+
+          <p class="hero-description">
+            Computer Science & Engineering student at Amity University with a strong focus on <strong>Full-Stack Web Development</strong>, <strong>Firebase Architectures</strong>, and <strong>IoT Robotics Systems</strong>.
+          </p>
+
+          <div class="hero-info-pills">
+            <span class="info-pill"><i class="fa-solid fa-location-dot"></i> Ghaziabad, UP</span>
+            <span class="info-pill"><i class="fa-solid fa-graduation-cap"></i> Amity University (CGPA 7.85)</span>
+            <span class="info-pill"><i class="fa-solid fa-microchip"></i> 12 Servo Motor Robotics</span>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-compass"></i> Explore My Work
+            </a>
+            <a href="#contact" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-envelope"></i> Contact Me
+            </a>
+            <button id="quick-resume-btn" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-file-arrow-down"></i> Resume Specs
+            </button>
+          </div>
+
+          <div class="hero-socials">
+            <span class="social-label">Connect:</span>
+            <a href="https://github.com/aadi-iii" target="_blank" rel="noopener" class="social-link" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/aditya-sharma-624177355" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:adityasharma59444@gmail.com" class="social-link" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:7838376187" class="social-link" title="Phone">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-card glass-card">
+            <div class="avatar-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">aditya@dev-workspace:~</span>
+            </div>
+            <div class="avatar-body">
+              <div class="avatar-img-wrapper">
+                <img src="profile.jpg" alt="Aditya Sharma Profile Picture" class="avatar-img">
+                <div class="avatar-glow"></div>
+              </div>
+              <div class="profile-quick-stats">
+                <div class="stat-box">
+                  <span class="stat-num" data-target="5">0</span>
+                  <span class="stat-lbl">Key Projects</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-num" data-target="785">0</span>
+                  <span class="stat-lbl">CGPA (7.85)</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-num" data-target="12">0</span>
+                  <span class="stat-lbl">Servos Gait</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Driven by Engineering & Creative Code</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glass-card">
+            <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Web Development Focus</h3>
+            <p>
+              I specialize in creating clean, responsive, and interactive web applications. From centralized blood donation platforms like <strong>OneDrop</strong> to interactive applications like <strong>Toxic Match</strong> & <strong>Love Calculator</strong>, I focus on clean code, Firebase Firestore backends, and engaging UX.
+            </p>
+          </div>
+
+          <div class="about-card glass-card">
+            <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>IoT & Embedded Systems</h3>
+            <p>
+              Beyond software, I bridge code with physical hardware. I engineered a <strong>12 Servo Motor Quad Robotics Spider Robot</strong> powered by Arduino Nano, designing gait kinematics, multi-servo motor control, and power routing hardware.
+            </p>
+          </div>
+
+          <div class="about-card glass-card">
+            <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Computer Engineering Student</h3>
+            <p>
+              Pursuing my Diploma in Computer Science & Engineering at <strong>Amity University, Greater Noida (2024 - 2027)</strong> maintaining a <strong>7.85/10 CGPA</strong>. Deeply engaged in Data Structures & Algorithms, Java, and Web Engineering.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Expertise</span>
+          <h2 class="section-title">Skills & Technology Stack</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">All Tech</button>
+          <button class="filter-btn" data-filter="lang">Languages</button>
+          <button class="filter-btn" data-filter="web">Web & Cloud</button>
+          <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
+          <button class="filter-btn" data-filter="tools">Tools & Concepts</button>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Languages -->
+          <div class="skill-card glass-card" data-category="lang">
+            <div class="skill-icon"><i class="fa-brands fa-java text-orange"></i></div>
+            <div class="skill-info">
+              <h4>Java</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="85%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">85%</span>
+          </div>
+
+          <div class="skill-card glass-card" data-category="lang">
+            <div class="skill-icon"><i class="fa-brands fa-python text-blue"></i></div>
+            <div class="skill-info">
+              <h4>Python</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="80%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">80%</span>
+          </div>
+
+          <div class="skill-card glass-card" data-category="lang">
+            <div class="skill-icon"><i class="fa-solid fa-c text-purple"></i></div>
+            <div class="skill-info">
+              <h4>C Language</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="75%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">75%</span>
+          </div>
+
+          <div class="skill-card glass-card" data-category="lang">
+            <div class="skill-icon"><i class="fa-brands fa-js text-yellow"></i></div>
+            <div class="skill-info">
+              <h4>JavaScript (ES6+)</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="92%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">92%</span>
+          </div>
+
+          <!-- Web & Cloud -->
+          <div class="skill-card glass-card" data-category="web">
+            <div class="skill-icon"><i class="fa-brands fa-html5 text-orange"></i></div>
+            <div class="skill-info">
+              <h4>HTML5 & CSS3</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="95%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">95%</span>
+          </div>
+
+          <div class="skill-card glass-card" data-category="web">
+            <div class="skill-icon"><i class="fa-solid fa-fire text-amber"></i></div>
+            <div class="skill-info">
+              <h4>Firebase Auth & Firestore</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="88%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">88%</span>
+          </div>
+
+          <div class="skill-card glass-card" data-category="web">
+            <div class="skill-icon"><i class="fa-solid fa-mobile-screen-button text-cyan"></i></div>
+            <div class="skill-info">
+              <h4>Responsive UI Design</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="94%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">94%</span>
+          </div>
+
+          <!-- IoT & Hardware -->
+          <div class="skill-card glass-card" data-category="iot">
+            <div class="skill-icon"><i class="fa-solid fa-microchip text-teal"></i></div>
+            <div class="skill-info">
+              <h4>Arduino Nano & Microcontrollers</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="88%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">88%</span>
+          </div>
+
+          <div class="skill-card glass-card" data-category="iot">
+            <div class="skill-icon"><i class="fa-solid fa-gears text-green"></i></div>
+            <div class="skill-info">
+              <h4>12 Servo Motor Gait Control</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="85%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">85%</span>
+          </div>
+
+          <div class="skill-card glass-card" data-category="iot">
+            <div class="skill-icon"><i class="fa-solid fa-plug-circle-bolt text-gold"></i></div>
+            <div class="skill-info">
+              <h4>Embedded C/C++ Integration</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="82%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">82%</span>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-card glass-card" data-category="tools">
+            <div class="skill-icon"><i class="fa-brands fa-github text-white"></i></div>
+            <div class="skill-info">
+              <h4>GitHub & Version Control</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="90%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">90%</span>
+          </div>
+
+          <div class="skill-card glass-card" data-category="tools">
+            <div class="skill-icon"><i class="fa-solid fa-globe text-indigo"></i></div>
+            <div class="skill-info">
+              <h4>Custom Domain & GitHub Pages</h4>
+              <div class="skill-bar-container">
+                <div class="skill-bar" data-progress="90%"></div>
+              </div>
+            </div>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+
+        <!-- Interactive Terminal Snippet Demo -->
+        <div class="terminal-container glass-card">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-tabs">
+              <button class="term-tab active" data-target="code-toxic">
+                <i class="fa-solid fa-skull"></i> ToxicMatch_Analytics.js
+              </button>
+              <button class="term-tab" data-target="code-love">
+                <i class="fa-solid fa-heart"></i> LoveCalc_Gamified.js
+              </button>
+              <button class="term-tab" data-target="code-onedrop">
+                <i class="fa-solid fa-droplet"></i> OneDrop_Workflow.js
+              </button>
+            </div>
+          </div>
+          <div class="terminal-body">
+            <!-- Code View 1: Toxic Match Firestore -->
+            <pre id="code-toxic" class="code-view active"><code><span class="code-comment">// Toxic Match ☠️ - Anonymous Quiz Result Analytics (Firestore)</span>
+<span class="code-keyword">import</span> { initializeApp } <span class="code-keyword">from</span> <span class="code-string">"firebase/app"</span>;
+<span class="code-keyword">import</span> { getFirestore, collection, addDoc, serverTimestamp } <span class="code-keyword">from</span> <span class="code-string">"firebase/firestore"</span>;
+
+<span class="code-type">async function</span> <span class="code-func">saveRedFlagAnalytics</span>(toxicityScore, redFlagsCount) {
+  <span class="code-type">const</span> analyticsRef = <span class="code-func">collection</span>(db, <span class="code-string">"toxic_quiz_analytics"</span>);
+  <span class="code-keyword">return await</span> <span class="code-func">addDoc</span>(analyticsRef, {
+    score: toxicityScore,
+    flagsDetected: redFlagsCount,
+    timestamp: <span class="code-func">serverTimestamp</span>()
+  });
+}</code></pre>
+
+            <!-- Code View 2: Love Calculator -->
+            <pre id="code-love" class="code-view"><code><span class="code-comment">// Love Calculator ❤️ - Gamified Multi-Challenge Scoring Engine</span>
+<span class="code-type">function</span> <span class="code-func">calculateEarnedLoveScore</span>(gameScores) {
+  <span class="code-type">const</span> { memoryPairsScore, wordScrambleTime, cupidsArrowAccuracy } = gameScores;
+  <span class="code-type">const</span> totalEarned = (memoryPairsScore * <span class="code-num">0.35</span>) + 
+                      (wordScrambleTime * <span class="code-num">0.30</span>) + 
+                      (cupidsArrowAccuracy * <span class="code-num">0.35</span>);
+  <span class="code-keyword">return</span> Math.<span class="code-func">min</span>(Math.<span class="code-func">round</span>(totalEarned), <span class="code-num">100</span>);
+}</code></pre>
+
+            <!-- Code View 3: OneDrop Workflow -->
+            <pre id="code-onedrop" class="code-view"><code><span class="code-comment">// OneDrop - Saving Lives, One Drop at a Time</span>
+<span class="code-type">async function</span> <span class="code-func">confirmDonationAndGenerateQR</span>(requestId, donorId) {
+  <span class="code-type">const</span> certData = {
+    requestId,
+    donorId,
+    verifiedAt: <span class="code-func">new Date</span>().<span class="code-func">toISOString</span>(),
+    certHash: <span class="code-func">generateVerificationHash</span>(requestId, donorId)
+  };
+  <span class="code-keyword">return await</span> <span class="code-func">saveVerifiedCertificate</span>(certData);
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portfolio Showcase</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+          <button class="proj-filter-btn active" data-proj-filter="all">All Projects</button>
+          <button class="proj-filter-btn" data-proj-filter="web">Web & Cloud</button>
+          <button class="proj-filter-btn" data-proj-filter="iot">IoT & Robotics</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Toxic Match -->
+          <div class="project-card glass-card" data-category="web">
+            <div class="project-img-holder">
+              <div class="project-badge">New Project</div>
+              <div class="project-overlay">
+                <a href="https://aadi-iii.github.io/toxic-match/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-btn" data-proj="toxicmatch">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+              </div>
+              <div class="project-illustration text-toxic">
+                <i class="fa-solid fa-skull-crossbones"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Vanilla JS</span>
+                <span class="tag">Firebase Firestore</span>
+                <span class="tag">GitHub Pages</span>
+              </div>
+              <h3 class="project-title">Toxic Match ☠️</h3>
+              <p class="project-desc">
+                An interactive relationship toxicity & compatibility experience featuring a Red Flag Quiz and two-person Toxicity Match Calculator. Built with vanilla JS and Firebase Firestore analytics.
+              </p>
+              <div class="project-footer">
+                <a href="https://aadi-iii.github.io/toxic-match/" target="_blank" rel="noopener" class="project-link">
+                  Launch Toxic Match <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: OneDrop -->
+          <div class="project-card glass-card" data-category="web">
+            <div class="project-img-holder">
+              <div class="project-badge">Full-Stack</div>
+              <div class="project-overlay">
+                <a href="https://1drop4u.online" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit 1drop4u.online
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-btn" data-proj="onedrop">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+              </div>
+              <div class="project-illustration text-red">
+                <i class="fa-solid fa-droplet"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">HTML/CSS/JS</span>
+                <span class="tag">Firebase Auth</span>
+                <span class="tag">Cloud Firestore</span>
+              </div>
+              <h3 class="project-title">OneDrop Blood Platform</h3>
+              <p class="project-tagline">“Saving Lives, One Drop at a Time.”</p>
+              <p class="project-desc">
+                Centralized blood donation platform connecting donors, receivers, and admins through a complete request, donation, verification, and QR digital certificate workflow. Deployed at <strong>1drop4u.online</strong>.
+              </p>
+              <div class="project-footer">
+                <a href="https://1drop4u.online" target="_blank" rel="noopener" class="project-link">
+                  1drop4u.online <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Love Calculator -->
+          <div class="project-card glass-card" data-category="web">
+            <div class="project-img-holder">
+              <div class="project-badge">Gamified Web</div>
+              <div class="project-overlay">
+                <a href="https://aadi-iii.github.io/Love-Calculator/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Live Game
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-btn" data-proj="lovecalc">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+              </div>
+              <div class="project-illustration text-pink">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Vanilla JS</span>
+                <span class="tag">Gamified UI</span>
+                <span class="tag">Firebase Analytics</span>
+              </div>
+              <h3 class="project-title">Love Calculator ❤️</h3>
+              <p class="project-tagline">“Forget random percentages. Earn your love score.”</p>
+              <p class="project-desc">
+                Gamified compatibility experience where users play interactive challenges (Memory Match, Word Scramble, Cupid's Arrow, Who Falls First) to earn their love percentage.
+              </p>
+              <div class="project-footer">
+                <a href="https://aadi-iii.github.io/Love-Calculator/" target="_blank" rel="noopener" class="project-link">
+                  Play Live Game <i class="fa-solid fa-gamepad"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: City Care Hospital -->
+          <div class="project-card glass-card" data-category="web">
+            <div class="project-img-holder">
+              <div class="project-badge">Frontend Web</div>
+              <div class="project-overlay">
+                <a href="https://aadi-iii.github.io/city-care-hospital-new/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Portal
+                </a>
+                <button class="btn btn-secondary btn-sm open-modal-btn" data-proj="citycare">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+              </div>
+              <div class="project-illustration text-blue">
+                <i class="fa-solid fa-hospital"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS Grid/Flex</span>
+                <span class="tag">GitHub Pages</span>
+              </div>
+              <h3 class="project-title">City Care Hospital Portal</h3>
+              <p class="project-desc">
+                Responsive healthcare web application designed with department overviews, doctor appointment UI, emergency contacts, and accessible layouts. Deployed on GitHub Pages.
+              </p>
+              <div class="project-footer">
+                <a href="https://aadi-iii.github.io/city-care-hospital-new/" target="_blank" rel="noopener" class="project-link">
+                  Explore City Care <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: IoT Spider Robot -->
+          <div class="project-card glass-card" data-category="iot">
+            <div class="project-img-holder">
+              <div class="project-badge">IoT Hardware</div>
+              <div class="project-overlay">
+                <button class="btn btn-secondary btn-sm open-modal-btn" data-proj="spiderbot">
+                  <i class="fa-solid fa-circle-info"></i> View Hardware Specs
+                </button>
+              </div>
+              <div class="project-illustration text-teal">
+                <i class="fa-solid fa-spider"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Arduino Nano</span>
+                <span class="tag">12 Servos</span>
+                <span class="tag">Embedded C</span>
+              </div>
+              <h3 class="project-title">IoT Spider Robot (12 Servo Quad)</h3>
+              <p class="project-desc">
+                Quadruped robotics system powered by Arduino Nano with 12 micro servos for 3-DOF leg movement, inverse kinematics, and synchronized gait algorithms.
+              </p>
+              <div class="project-footer">
+                <span class="project-link open-modal-btn" data-proj="spiderbot" style="cursor:pointer">
+                  Hardware Specs <i class="fa-solid fa-microchip"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & TIMELINE -->
+    <section id="education" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education & Milestones</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date">2024 - 2027 (Expected)</span>
+              <h3>Diploma in Computer Science & Engineering</h3>
+              <h4>Amity University, Greater Noida</h4>
+              <div class="cgpa-badge"><i class="fa-solid fa-star"></i> CGPA: 7.85 / 10</div>
+              <p>
+                Pursuing rigorous studies in Computer Engineering fundamentals, Data Structures & Algorithms, Java Programming, Database Systems, Web Engineering, and Embedded Systems.
+              </p>
+              <ul class="timeline-highlights">
+                <li><i class="fa-solid fa-check"></i> Core Coursework: DSA, Java, Operating Systems, Computer Architecture</li>
+                <li><i class="fa-solid fa-check"></i> Hands-on Robotics & Full-stack Web Development Projects</li>
+                <li><i class="fa-solid fa-check"></i> Active participant in technical workshops & coding challenges</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date">2024 - Present</span>
+              <h3>Full-Stack & Robotics Project Deployments</h3>
+              <h4>Independent Engineering Projects</h4>
+              <p>
+                Successfully architected and deployed production web applications like <strong>OneDrop (1drop4u.online)</strong>, <strong>Toxic Match</strong>, and <strong>Love Calculator</strong> with Firebase Authentication & Firestore, alongside 12 Servo Motor Quad Robotics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Credentials</span>
+          <h2 class="section-title">Certifications & Virtual Simulations</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card glass-card">
+            <div class="cert-icon text-purple"><i class="fa-solid fa-brain"></i></div>
+            <h3>Claude Anthropic API</h3>
+            <p>Generative AI Integration & Prompt Engineering Mastery.</p>
+            <span class="cert-tag">AI / LLM API</span>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card glass-card">
+            <div class="cert-icon text-red"><i class="fa-solid fa-palette"></i></div>
+            <h3>Adobe Design AI</h3>
+            <p>UI/UX Design principles and visual generative AI assets workflow.</p>
+            <span class="cert-tag">UI/UX Design</span>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-card glass-card">
+            <div class="cert-icon text-green"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Deloitte Cyber Job Sim</h3>
+            <p>Cybersecurity operations, threat analysis, and security controls simulation.</p>
+            <span class="cert-tag">Cybersecurity</span>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-card glass-card">
+            <div class="cert-icon text-blue"><i class="fa-solid fa-certificate"></i></div>
+            <h3>NASSCOM Digital 101</h3>
+            <p>Foundational certification in emerging digital technologies and cloud systems.</p>
+            <span class="cert-tag">Digital Tech</span>
+          </div>
+
+          <!-- Cert 5 -->
+          <div class="cert-card glass-card">
+            <div class="cert-icon text-yellow"><i class="fa-solid fa-code"></i></div>
+            <h3>GeeksforGeeks Workshop</h3>
+            <p>Data Structures & Algorithms problem-solving intensive workshop.</p>
+            <span class="cert-tag">DSA & Code</span>
+          </div>
+
+          <!-- Cert 6 -->
+          <div class="cert-card glass-card">
+            <div class="cert-icon text-orange"><i class="fa-brands fa-aws"></i></div>
+            <h3>AWS Solutions Training</h3>
+            <p>Cloud infrastructure fundamentals, S3, EC2, and deployment basics.</p>
+            <span class="cert-tag">Cloud & AWS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Contact Aditya Sharma</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Column -->
+          <div class="contact-info-card glass-card">
+            <h3>Let's Connect!</h3>
+            <p>
+              I am actively seeking internship opportunities, freelance web development work, or engineering collaborations. Feel free to reach out directly!
+            </p>
+
+            <div class="info-list">
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="info-lbl">Email Address</span>
+                  <a href="mailto:adityasharma59444@gmail.com" class="info-val">adityasharma59444@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <span class="info-lbl">Phone Number</span>
+                  <a href="tel:7838376187" class="info-val">+91 7838376187</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="info-lbl">Location</span>
+                  <span class="info-val">Ghaziabad, Uttar Pradesh, India</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-brands fa-github"></i></div>
+                <div>
+                  <span class="info-lbl">GitHub Repository</span>
+                  <a href="https://github.com/aadi-iii" target="_blank" rel="noopener" class="info-val">github.com/aadi-iii</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-brands fa-linkedin"></i></div>
+                <div>
+                  <span class="info-lbl">LinkedIn Profile</span>
+                  <a href="https://linkedin.com/in/aditya-sharma-624177355" target="_blank" rel="noopener" class="info-val">aditya-sharma-624177355</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="contact-form-card glass-card">
+            <h3>Send Me A Message</h3>
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                <span class="error-msg" id="err-name">Please enter your name</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                <span class="error-msg" id="err-email">Please enter a valid email</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="Project Inquiry / Internship" required>
+                <span class="error-msg" id="err-subject">Please enter a subject</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Hi Aditya, I'd like to discuss..." required></textarea>
+                <span class="error-msg" id="err-message">Please write a message</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; <span id="current-year">2026</span> <strong>Aditya Sharma</strong>. Designed & Built with HTML, Vanilla CSS & JavaScript.</p>
+      <a href="#hero" class="back-to-top" title="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- NATIVE ACCESSIBLE DIALOG MODAL FOR PROJECT SPECS -->
+  <dialog id="project-modal" class="project-modal glass-card" closedby="any">
+    <div class="modal-header">
+      <h3 id="modal-title">Project Details</h3>
+      <button id="close-modal-btn" class="btn-icon" aria-label="Close dialog">&times;</button>
+    </div>
+    <div class="modal-body" id="modal-body-content">
+      <!-- Injected via JavaScript -->
+    </div>
+    <div class="modal-footer">
+      <button id="modal-close-action" class="btn btn-secondary btn-sm">Close</button>
+      <a id="modal-external-link" href="#" target="_blank" rel="noopener" class="btn btn-primary btn-sm hidden">
+        Open Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+  </dialog>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- JavaScript Script (Flat structure) -->
+  <script src="main.js"></script>
+</body>
+</html>
